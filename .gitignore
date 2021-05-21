@@ -1,6 +1,13 @@
-# Django stuff:
+
+# Created by https://www.toptal.com/developers/gitignore/api/django,python
+# Edit at https://www.toptal.com/developers/gitignore?templates=django,python
+
+### Django ###
 *.log
-i_de_adivinacion_web/__pycache__/
-index/__pycache__/
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
 db.sqlite3
 db.sqlite3-journal
+media
