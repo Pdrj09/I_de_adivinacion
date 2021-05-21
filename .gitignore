@@ -1,6 +1,6 @@
 # Django stuff:
 *.log
-i_de_adivinacion_web/__pycache__
-index/__pycache__
+i_de_adivinacion_web/__pycache__/
+index/__pycache__/
 db.sqlite3
 db.sqlite3-journal
