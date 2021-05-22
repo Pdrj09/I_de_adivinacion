@@ -4,9 +4,10 @@ from django.db.models.fields import CharField, DateField
 # Create your models here.
 class tarotistas(models.Model):
     nombre = models.CharField(max_length = 15)
-    especialidades = CharField(max_length = 500)
-    actividades = CharField(max_length= 500)
+    especialidades = models.CharField(max_length = 500)
+    actividades = models.CharField(max_length= 500)
+    imagen = models.ImageField(upload_to="index/media", null=True, blank=True)
 
 class eventos(models.Model):
-    fecha = DateField()
-    acctividad = CharField(max_length= 500)
+    fecha = models.DateField()
+    acctividad = models.CharField(max_length= 500)

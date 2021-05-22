@@ -2,9 +2,12 @@
 *.log
 *.pot
 *.pyc
-index/__pycache__/
-i_de_adivinacion_web/__pycache__/
+*.jpg
+index/__pycache__
+i_de_adivinacion_web/__pycache__
+index/migrations
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
-medias
+media
+index/media
