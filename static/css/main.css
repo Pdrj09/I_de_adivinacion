@@ -668,7 +668,7 @@ header .logo a {
 	width: 114px;
 	height: 66px;
 	background: url("../images/logoK@2x.png") no-repeat center;
-	background-size: 61px 14px;
+	background-size: 150px 52px;
 }
 
 /* header social */
@@ -981,6 +981,12 @@ ul#nav li.current a:after {
 .hero-content {
 	position: relative;
 	padding-top: 66px;
+	padding-bottom: 102px;
+}
+
+.hero-content2 {
+	position: relative;
+	padding-top: 100px;
 	padding-bottom: 102px;
 }
 
