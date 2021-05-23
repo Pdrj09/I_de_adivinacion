@@ -1,5 +1,4 @@
 from index.models import eventos, tarotistas
-from i_de_adivinacion_web.settings import TEMPLATES
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
