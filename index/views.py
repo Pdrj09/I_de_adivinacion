@@ -27,9 +27,14 @@ def index(request):
 
 def qnsms(request):
 
+    trtsts = tarotistas.objects.order_by('nombre')
+
     doc_template = loader.get_template("qnsms.html")
-    ctx = {}
+    ctx = {
+        'trtsts' : trtsts
+    }
     doc = doc_template.render(ctx)
 
     return HttpResponse(doc)
+
 

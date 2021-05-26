@@ -9,15 +9,15 @@
 
 		<div class="twelve columns">
 
-			<h1>¿quienes somos?<span>.</span></h1>
+			<h1>¿quienes somos?</h1>
 
-		   <hr />     	    
+			<hr />     	    
 
-		   <p>
-				Nosotros somos un quipo de tarotistas que nos dedicamos a la lectura de cartas on-line
+			<p>
+				Nosotros somos un equipo de tarotistas que nos dedicamos a la lectura de cartas on-line
 				atraves de directos, DM de instragram y tambien hacemos videos y publicaciones especiales como
 				el horoscopo de la semana y otos videos y publicacciones especiales.
-		   </p>
+			</p>
 
 		</div> <!-- end section-head -->
 
@@ -29,52 +29,77 @@
 
 			<div class="bgrid">
 
-				<h3>Our Process.</h3>	
+				<h3>Directos </h3>	
 
-				<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-				</p>
-
-			 </div>
-
-			<div class="bgrid">
-
-				   <h3>Our Approach.</h3>
-
-				   <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-				 </p>	
-
-			</div> 
-
-			<div class="bgrid">
-
-				   <h3>Our Goal.</h3>	
-
-				   <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+				<p>
+					<strong>I de Adivinación</strong> tiene planeado hacer directos regulares de tarot, en estos las personas
+					presentes podran participar activamente en los direcos haciendo pregustas a los tarotistas para que te 
+					vean el futuro, esto se hara desde un enlace que llevara a una llamada por la que habra comunicación directa
+					con nestros tarotistas.
 				</p>
 
 			</div>
 
 			<div class="bgrid">
 
-				<h3>Our Mission.</h3>
+					<h3>Horoscopo de la semana</h3>
 
-				<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+					<p>
+						Desde <strong>I de Adivinación</strong> tenemos el objetivo de poder ayudarles lo maximo posible
+						por eso los sabados/domingos saldra en nuestro canal de youtube el horoscopo de la semana, este 
+						constara de un video que contara como sera la semana para cada signo y desde nuestras redes sociales
+						haremos un resumen de este viedeo.
+					</p>	
+
+			</div> 
+
+			<div class="bgrid">
+
+					<h3>Más eventos</h3>	
+
+					<p>
+						Anque actualmente desde <strong>I de Adivinación</strong> tenemos la prioridad de poder sacar directos
+						y horoscopos tenemos pensado poder hacer eventos especiales, estos se informaran con antelación en nuestras 
+						redes sociales y en la web.
+					</p>
+
+			</div>
+
+			<div class="bgrid">
+
+				<h3>¿Como apayarnos?</h3>
+
+				<p>
+					actualmente en <strong>I de Adivinación</strong> no tenemos medios para que los interesados puedan
+					apoyar con donaciones, si que agradecemos que los que quieran apoyar este proyecto de tarot y astrologia
+					se unieran a los directos y vean y compartan las publicaciones en de la web, redes sociales y canal de youtube.
 				</p>	
 
 			</div>
 
 		</div> <!-- end process -->      	
 
-	   </div> <!-- end row -->
+		</div> <!-- end row -->
 
 
 	<div class="row team section-head">
 
 		<div class="twelve columns">
 
-		   <h1>Meet Our Team<span>.</span></h1>
+			<h1>Nuestro equipo de <span>tarotistas</span></h1>
 
-		   <hr />	         
+			{% if trtsts %}
+			
+				<ul>
+				{% for t in trtsts %}
+					<li>{{ t.nombre }}, especialidades -> {{ t.especialidades }}, actividades -> {{ t.actividades }}</li>
+				{% endfor %}
+				</u>
+			{% else %}
+			<p> Lo sentios pero una furza oscura no nos deja conectar con nuestros tarotistas</p>
+			{% endif %}
+			
+			<hr />	         
 
 		</div>
 
