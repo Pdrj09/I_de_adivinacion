@@ -3,6 +3,7 @@
 *.pot
 *.pyc
 *.jpg
+*.jpeg
 index/__pycache__
 i_de_adivinacion_web/__pycache__
 index/migrations

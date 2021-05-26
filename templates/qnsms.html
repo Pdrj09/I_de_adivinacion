@@ -88,17 +88,25 @@
 
 			<h1>Nuestro equipo de <span>tarotistas</span></h1>
 
-			{% if trtsts %}
-			
-				<ul>
-				{% for t in trtsts %}
-					<li>{{ t.nombre }}, especialidades -> {{ t.especialidades }}, actividades -> {{ t.actividades }}</li>
-				{% endfor %}
-				</u>
-			{% else %}
-			<p> Lo sentios pero una furza oscura no nos deja conectar con nuestros tarotistas</p>
-			{% endif %}
-			
+			<div class="">
+				{% if trtsts %}
+				
+					{% for t in trtsts %}
+						<div class="bgrid member">
+							<div class="member-pic">
+								<img src="{{ t.imagen }}" alt>
+							</div>
+							<div class="member-name">
+								<h3>{{ t.nombre }}</h3>
+								<p><span>{{ t.especialidades }}</span></p>
+							</div>
+							<p>{{ t.actividades }}</p>
+						</div>
+					{% endfor %}
+				{% else %}
+				<p> Lo sentios pero una furza oscura no nos deja conectar con nuestros tarotistas</p>
+				{% endif %}
+			</div>
 			<hr />	         
 
 		</div>

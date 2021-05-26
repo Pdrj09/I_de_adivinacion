@@ -34,7 +34,7 @@ def qnsms(request):
         'trtsts' : trtsts
     }
     doc = doc_template.render(ctx)
-
+    
     return HttpResponse(doc)
 
 
