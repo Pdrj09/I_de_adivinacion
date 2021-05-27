@@ -19,5 +19,6 @@ from . import views
 urlpatterns = [
     #URL del index
     path('', views.index),
-    path('nosotros.html', views.qnsms),
+    path('nosotros', views.qnsms),
+    path('proximamente', views.prxev),
 ]

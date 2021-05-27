@@ -37,4 +37,14 @@ def qnsms(request):
     
     return HttpResponse(doc)
 
+def prxev(request):
 
+    prx_ev = eventos.objects.order_by('fecha')[:5]
+
+    doc_templare = loader.get_template("prx_ev.html")
+    ctx = {
+        'prx_ev' : prx_ev
+    }
+    doc = doc_templare.render(ctx)
+
+    return HttpResponse(doc)

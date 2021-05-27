@@ -1,0 +1,37 @@
+<html>
+    {% include "menu_superior.html" %}
+    
+    
+    <div class="row hero-content2">
+
+        <div class="twelve columns">
+    
+            <h1>Nuestros proximos eventos:</h1>
+
+            {% if prx_ev %}
+
+            <ul>
+                {% for p in prx_ev %}
+                    <li>{{ p.fecha }} -> {{ p.acctividad }}</li>
+                {% endfor %}
+
+            </ul>
+            {% else %}
+            {% endif %}
+
+            <div class="row team section-head twelve columns"></div>
+                <h3>Dato <span>importante</span></h3>
+                <p>
+                    Esta es una lista de los proximos 5 eventos que ocurriran en I de Adivinación, ete listado 
+                    se mantendra actualizado, si quiere acceder al calendario completo, porfavor no dude en acceder
+                    a este -> <a href="/">link</a>
+                </p>
+            </div>
+
+        </div>
+    
+    </div>
+
+    {% include "menu_inferior.html" %}
+
+</html>
