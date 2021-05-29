@@ -1,0 +1,93 @@
+
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>I de adivinación</title>
+    
+        <!-- mobile specific metas
+        ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <!-- CSS
+        ================================================== -->
+    <link rel="stylesheet" href="static/css/base.css">
+    <link rel="stylesheet" href="static/css/vendor.min.css">
+    <link rel="stylesheet" href="static/css/main.css">     
+    
+        <!-- script
+        ================================================== -->
+    <script src="static/js/modernizr.js"></script>
+    
+        <!-- favicons
+        ================================================== -->
+    <link rel="shortcut icon" href="static/favicon.png" >
+    
+</head>
+    
+<body>
+    
+        <!-- header
+        ================================================== -->
+    <header id="main-header">
+    
+    <div class="row">
+    
+    <div class="logo">
+    <a href="/">I DE ADIVINACIÓN</a>
+    </div>
+    
+    <nav id="nav-wrap">         
+        <!--
+                <a class="mobile-btn" href="/" title="Show navigation">
+                    <span class="menu-icon">Inicio</span>
+                </a>
+                <a class="mobile-btn" href="/nosotros/" title="Hide navigation">
+                    <span class="menu-icon">Nosotros</span>
+                </a>            
+            -->
+        <ul id="nav" class="nav">
+            <li>
+                <a href="/">Inicio</a>
+            </li>
+            <li>
+                <a href="/nosotros">Nosotros</a>
+            </li>
+            <li>
+                <a href="/proximamente">Proximamente</a>
+            </li>
+
+            {% if user.is_authenticated %}
+
+                
+                <li>
+                    <a href="{% url 'logout' %}">cerrar sesión</a>
+                </li>
+
+                <li>
+                    <a href="#">@ {{user.username }}</a>
+                </li>
+
+            {% else %}
+                
+
+                <li>
+                    <a href="{% url 'login' %}">inicio de sesión</a>
+                </li>
+
+            {% endif %}
+            
+        </ul> <!-- end #nav -->
+
+        </nav> <!-- end #nav-wrap -->
+
+        <ul class="header-social">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+        </ul>      
+
+        </div>
+        </header> <!-- end header -->
+</html>

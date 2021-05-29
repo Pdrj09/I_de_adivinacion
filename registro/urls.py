@@ -1,4 +1,4 @@
-"""i_de_adivinacion_web URL Configuration
+"""index URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -13,18 +13,10 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import include, path
-from django.urls import include, path
+from django.urls import path
+from django.urls.conf import include
+from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    #URL de la aplicacción index
-    path('', include('index.urls')),
-
-    #URL de la app registro
-    path('log/', include('registro.urls')),
-
-    #URL para el inicio de sesión
-    path('accounts/', include("django.contrib.auth.urls")),
+    
 ]
