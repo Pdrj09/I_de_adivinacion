@@ -2986,14 +2986,15 @@ textarea.form-control-lg {
 }
 
 .btn-success {
-  color: #fff;
-  background-color: #198754;
-  border-color: #198754;
+  float: right;
+  color: rgb(0, 0, 0);
+  background-color: #fdc501;
+  border-color: #e2b202;
 }
 .btn-success:hover {
-  color: #fff;
-  background-color: #157347;
-  border-color: #146c43;
+  color: rgb(0, 0, 0);
+  background-color: #fde074;
+  border-color: #e6cb6a;
 }
 .btn-check:focus + .btn-success, .btn-success:focus {
   color: #fff;

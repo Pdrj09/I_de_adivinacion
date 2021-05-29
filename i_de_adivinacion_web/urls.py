@@ -22,9 +22,6 @@ urlpatterns = [
     #URL de la aplicacción index
     path('', include('index.urls')),
 
-    #URL de la app registro
-    path('log/', include('registro.urls')),
-
     #URL para el inicio de sesión
     path('accounts/', include("django.contrib.auth.urls")),
 ]

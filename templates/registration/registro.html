@@ -23,19 +23,18 @@
                 <div class="car">
                     <div class="card-body">
 
-                        <h2>Inico de sesión</h2>
+                        <h2>Registro</h2>
 
                         <hr>
-                        <form action="" method="POST">
+                        <form method="POST">
                             
 
                             {% csrf_token %}
                             {{ form | crispy }}
-                            <a href="/">inicio</a>|<a href="log/register/">¿No te has registrado?</a>
 
-                            <input type="submit" value="ingresar" class="btn btn-success">
+                            <input type="submit" value="registrar" class="btn btn-success">
 
-                            
+                            <a href="/">inicio</a>|<a href="/">¿Tienes una cuenta?</a>
 
                         </form>
 
