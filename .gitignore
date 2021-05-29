@@ -13,3 +13,6 @@ db.sqlite3-journal
 media
 index/media
 settings.py
+
+
+i_de_adivinacion_web/settings.py
