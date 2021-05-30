@@ -75,9 +75,18 @@
                 <li>
                     <a href="{% url 'login' %}">inicio de sesión</a>
                 </li>
+                <li>
+                    <a href="/register/">crear cuenta</a>
+                </li>
 
             {% endif %}
-            
+
+            {% if user.is_superuser %}
+                <li>
+                    <a href="admin/">admin</a>
+                </li>
+            {% endif %}
+
         </ul> <!-- end #nav -->
 
         </nav> <!-- end #nav-wrap -->

@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models.fields import CharField, DateField
+from django.contrib.auth.models import User
 # Create your models here.
 class tarotistas(models.Model):
     nombre = models.CharField(max_length = 15)
@@ -10,4 +11,5 @@ class tarotistas(models.Model):
 class eventos(models.Model):
     fecha = models.DateField()
     acctividad = models.CharField(max_length= 500)
+
 
