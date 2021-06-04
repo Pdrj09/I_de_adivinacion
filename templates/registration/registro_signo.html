@@ -10,6 +10,13 @@
     <!--<link rel="stylesheet" href="/static/css/vendor.min.css">
     <link rel="stylesheet" href="/static/css/main.css">-->
     <title>I de Adivinación-login</title>
+    {% if o == 1 %}
+        
+        <script>
+            alert("porfavor introduce tu usuario")
+        </script>
+        
+    {% endif %}
 </head>
 <body>
 
@@ -23,21 +30,18 @@
                 <div class="car">
                     <div class="card-body">
 
-                        <h2>Registro</h2>
+                        <h2>Signo zodiaco</h2>
 
                         <hr>
+                        
                         <form method="POST">
                             
-
                             {% csrf_token %}
                             {{ form | crispy }}
-                            
+
                             <input type="submit" value="registrar" class="btn btn-success">
-
                             
-
-                        </form>
-                    <a href="/">inicio</a>|<a href="/accounts/login/">¿Tienes una cuenta?</a>
+                        
                     </div>
                 </div>
 
