@@ -99,34 +99,32 @@ def register(request):
     #se renderiza la plantilla con el contexto
     
     return render(request, 'registration/registro.html', ctx)
-
+#rec = int(request.POST.get('User'))
 
 def registro_signo(request):
     doc_template = loader.get_template("registration/registro.html")
     #se crea el contexto para pasarlo a la plantilla
+    user = request.user
     o = 0
     ctx = {
-        'form' : SignoZodiaco()
+        'user' : user,
+        'form' : SignoZodiaco(),
+        'o' : o,
     }
     O = {
-        'o' : o,
+        
         'User' : request.user.id,
     }
     if request.method == 'POST':
-        user_id = O.get('User')
-        rec = int(request.POST.get('User'))
-        formuario = SignoZodiaco(data=request.POST)
-        if user_id == rec:
-            logger.error('REGISTRO -> Ok')
-            if formuario.is_valid():
-                print('reza')
-                formuario.save()
-                messages.success(request, "registrado correctamente")
-                return redirect(to='/')
+        formulario = SignoZodiaco(request.POST)
 
-            else:
-                o = o + 1
-                return redirect(to='/signo')
+        if formulario.is_valid():
+            question = formulario.save(False) 
+            question.User_id = request.user.id
+            question.save() 
+            #formulario.save()
+            #messages.success(request, "registrado correctamente")
+            return redirect(to='/')
 
                     #data["form"] = formuario
     #se renderiza la plantilla con el contexto

@@ -13,16 +13,10 @@ class MyUserCreationForm(UserCreationForm):
         fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
 
 
-SIGNOS =(
-    ("1", "One"),
-    ("2", "Two"),
-    ("3", "Three"),
-    ("4", "Four"),
-    ("5", "Five")
-)
+
 
 class SignoZodiaco(forms.ModelForm):
-        class Meta:
-            model = Perfil
-            fields = ['User', 'signo_zodiaco']
-
+    class Meta:
+        model = Perfil
+        fields = ['signo_zodiaco']
+        
