@@ -31,7 +31,7 @@
                             
                             {% csrf_token %}
                             <label for="User_id">{{ user.id }}</label>
-                            {{ form }}
+                            {{ form | crispy }}
 
                             <input type="submit" value="ingresar" class="btn btn-success">
 

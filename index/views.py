@@ -69,64 +69,65 @@ def prxev(request):
     user = request.user
     prx_ev = eventos.objects.order_by('fecha')[:5]
 
-    doc_templare = loader.get_template("index/prx_ev.html")
+    doc_template = loader.get_template("index/prx_ev.html")
     ctx = {
         'prx_ev' : prx_ev,
         'user' : user
     }
-    doc = doc_templare.render(ctx)
+    doc = doc_template.render(ctx)
 
     aut(request, user, doc)
 
     return HttpResponse(doc)
 
+
+"""This view create the registration form an then redirect the user to the 
+    sign form"""
 def register(request):
-    doc_template = loader.get_template("registration/registro.html")
-    #se crea el contexto para pasarlo a la plantilla
+    #create the contex
     ctx = {
         'form' : MyUserCreationForm(),
         'form_2' : SignoZodiaco()
     }
     if request.method == 'POST':
-        formuario = MyUserCreationForm(data=request.POST)
+        form = MyUserCreationForm(data=request.POST)
         
-        if formuario.is_valid():
-            formuario.save()
-            user = authenticate(username=formuario.cleaned_data["username"], password=formuario.cleaned_data["password1"])
+        if form.is_valid():
+            form.save()
+            user = authenticate(username=form.cleaned_data["username"], password=form.cleaned_data["password1"])
             login(request, user)
             return redirect(to='/signo')
-        #data["form"] = formuario
-    #se renderiza la plantilla con el contexto
-    
+    #render of the page whit the request, the html page and the contex
     return render(request, 'registration/registro.html', ctx)
-#rec = int(request.POST.get('User'))
 
+""" this view creates the form page of the sign and then redirects to the menu """
 def registro_signo(request):
-    doc_template = loader.get_template("registration/registro.html")
-    #se crea el contexto para pasarlo a la plantilla
-    user = request.user
-    o = 0
+    #create the contex
     ctx = {
-        'user' : user,
         'form' : SignoZodiaco(),
-        'o' : o,
     }
-    O = {
-        
-        'User' : request.user.id,
-    }
+
+    #if the form is post
     if request.method == 'POST':
-        formulario = SignoZodiaco(request.POST)
 
-        if formulario.is_valid():
-            question = formulario.save(False) 
-            question.User_id = request.user.id
-            question.save() 
-            #formulario.save()
-            #messages.success(request, "registrado correctamente")
+        #save the form
+        form = SignoZodiaco(request.POST)
+
+        #the form is validated
+        if form.is_valid():
+
+            #create the f_form (final form)
+            f_form = form.save(False) 
+            #add the user id to the form
+            f_form.User_id = request.user.id
+            #save an send the form
+            f_form.save() 
+
+            #messages.success(request, "registrado correctamente")# for the future
+            #redirect the page to the menu
             return redirect(to='/')
+            
 
-                    #data["form"] = formuario
-    #se renderiza la plantilla con el contexto
-    
+
+    #se renderiza la plantilla con el contexto y con el request
     return render(request, 'registration/registro_signo.html', ctx)
