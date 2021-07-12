@@ -18,5 +18,5 @@ class MyUserCreationForm(UserCreationForm):
 class SignoZodiaco(forms.ModelForm):
     class Meta:
         model = Perfil
-        fields = ['signo_zodiaco']
+        fields = ['signo_zodiaco', 'nacimiento']
         

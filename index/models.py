@@ -31,3 +31,4 @@ SIGNOS =(
 class Perfil(models.Model):
     User = models.OneToOneField(User, on_delete = models.CASCADE)
     signo_zodiaco = models.CharField(max_length = 11, choices = SIGNOS)
+    nacimiento = models.DateField(default='1111-11-11')
