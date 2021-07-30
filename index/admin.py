@@ -5,3 +5,4 @@ from index import models
 admin.site.register(models.tarotistas)
 admin.site.register(models.eventos)
 admin.site.register(models.Perfil)
+

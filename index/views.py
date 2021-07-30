@@ -121,10 +121,7 @@ def registro_signo(request):
             #add the user id to the form
             f_form.User_id = request.user.id
             #save an send the form
-            try:
-                f_form.save()
-            except:
-                return redirect(to='/nosotros')
+            f_form.save() 
 
             #messages.success(request, "registrado correctamente")# for the future
             #redirect the page to the menu

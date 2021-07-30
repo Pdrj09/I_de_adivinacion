@@ -19,6 +19,9 @@
         <!-- script
         ================================================== -->
     <script src="static/js/modernizr.js"></script>
+    <script src="static/js/menu.js">
+        console.log(hi, h2, h3);
+    </script>
     
         <!-- favicons
         ================================================== -->
@@ -49,13 +52,13 @@
             -->
         <ul id="nav" class="nav">
             <li>
-                <a href="/">Inicio</a>
+                <a id="inicio" href="/">Inicio</a>
             </li>
             <li>
-                <a href="/nosotros">Nosotros</a>
+                <a id="nosotros" href="/nosotros">Nosotros</a>
             </li>
             <li>
-                <a href="/proximamente">Proximamente</a>
+                <a id="proximamente" href="/proximamente">Proximamente</a>
             </li>
 
             {% if user.is_authenticated %}

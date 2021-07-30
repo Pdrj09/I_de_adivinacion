@@ -218,10 +218,10 @@
 	/*	contact form
 	------------------------------------------------------*/
 
-	/* local validation */
+	/* local validation 
 	$('#contactForm').validate({
 
-		/* submit via ajax */
+		/* submit via ajax *
 		submitHandler: function(form) {
 
 			var sLoader = $('#submit-loader');
@@ -262,7 +262,7 @@
 		      }
 
 	      });     		
-  		}
+  		}*/
 
 	});
 	
