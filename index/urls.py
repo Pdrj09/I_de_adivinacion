@@ -23,4 +23,5 @@ urlpatterns = [
     path('proximamente', views.prxev),
     path('register/', views.register),
     path('signo', views.registro_signo),
+    path('user', views.usr),
 ]

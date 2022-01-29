@@ -677,6 +677,9 @@
          </div> <!-- end team-wrapper -->
 
     </div> <!-- end row -->
+{% if user.is_authenticated%}
+  
+{% else %}
 
       <div id="call-to-action">	       
 
@@ -684,16 +687,14 @@
 
 		      <div class="twelve columns">		         		
 
-			      <h2><a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Styleshout Recommends Dreamhost<span>.</span></a></h2>
+			      <h2>¿Todavia no has iniciado tines cuenta?<span>.</span></a></h2>
 
-			      <p>
-			      Looking for an awesome and reliable webhosting? Try <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT"><span>DreamHost</span></a>.
-					Get <span>$50 off</span> when you sign up with the promocode <span>styleshout</span>. 
-					<!-- Simply type	the promocode in the box labeled “Promo Code” when placing your order. -->					
-					</p>
+                <p>
+                    Crea una para no perderte o inicia sesión <a href="{% url 'login' %}">aqui</a>
+				</p>
 
 					<div class="action">
-			         <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT" >Sign Up Now</a>
+			         <a href="/register" >Create a account Now</a>
 	         	</div>
 
 			   </div>
@@ -703,7 +704,7 @@
 	   </div> <!-- end call-to-action -->	           
 
    </section> <!-- end about -->  
-
+{% endif %}
 
    <!-- Testimonials Section
    ================================================== -->

@@ -1,0 +1,17 @@
+{% include "menus/menu_superior.html" %}
+    {% if user.is_authenticated %}
+        
+        <div>
+            <h1 style="text-align: center; line-height: 196px;font-size: 42px;
+            letter-spacing: 0.07px;font-style: normal;
+            font-weight: 900; ">@{{ user.username }}</h1>
+        </div>
+
+        <div>
+            <h4>Nombre de usuario: {{ user.username }}</h4>
+        </div>
+        </body>
+    {% endif %}
+{% include "menus/menu_inferior.html" %}
+
+

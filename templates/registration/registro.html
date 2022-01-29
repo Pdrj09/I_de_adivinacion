@@ -32,10 +32,11 @@
 
                             {% csrf_token %}
                             {{ form | crispy }}
+
+                            
                             
                             <input type="submit" value="registrar" class="btn btn-success">
 
-                            
 
                         </form>
                     <a href="/">inicio</a>|<a href="/accounts/login/">¿Tienes una cuenta?</a>

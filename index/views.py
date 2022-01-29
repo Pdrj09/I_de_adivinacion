@@ -3,12 +3,14 @@ from index.models import eventos, tarotistas
 from django.shortcuts import redirect, render
 from django.http import HttpResponse 
 from django.template import loader
-from .forms import MyUserCreationForm, SignoZodiaco
+from .forms import SignoZodiaco, UserCreationFormWithEmail
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from i_de_adivinacion_web import settings
 from .models import Perfil
 import logging
+
+
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
@@ -46,7 +48,6 @@ def index(request):
     #se muestra en la web la plantilla y el contexto renderizados
     return HttpResponse(doc)
 
-    
 
 def qnsms(request):
 
@@ -86,17 +87,19 @@ def prxev(request):
 def register(request):
     #create the contex
     ctx = {
-        'form' : MyUserCreationForm(),
-        'form_2' : SignoZodiaco()
+        'form' : UserCreationFormWithEmail()
     }
+
     if request.method == 'POST':
-        form = MyUserCreationForm(data=request.POST)
+        form = UserCreationFormWithEmail(data=request.POST)
         
+
         if form.is_valid():
             form.save()
             user = authenticate(username=form.cleaned_data["username"], password=form.cleaned_data["password1"])
             login(request, user)
             return redirect(to='/signo')
+            
     #render of the page whit the request, the html page and the contex
     return render(request, 'registration/registro.html', ctx)
 
@@ -118,8 +121,10 @@ def registro_signo(request):
 
             #create the f_form (final form)
             f_form = form.save(False) 
+            print(form)
             #add the user id to the form
             f_form.User_id = request.user.id
+            print(f_form)
             #save an send the form
             f_form.save() 
 
@@ -131,3 +136,25 @@ def registro_signo(request):
 
     #se renderiza la plantilla con el contexto y con el request
     return render(request, 'registration/registro_signo.html', ctx)
+
+def usr(request):
+
+    user = request.user
+    usrn = user.username
+
+    #load the template
+    doc_template = loader.get_template("registration/user_menu.html")
+    #create the context to the template
+    ctx = {
+        'user' : user,
+        'usrn' : usrn
+    }
+    #render the template with the context
+    doc = doc_template.render(ctx)
+    
+    aut(request, user, doc)
+
+    #shown the render of the template
+    return HttpResponse(doc)
+
+
